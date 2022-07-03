@@ -3,9 +3,9 @@ import { Grid, Paper, Avatar, TextField, Button } from "@material-ui/core";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import { Link } from "react-router-dom";
 const Login = () => {
-    const [name, setName] = React.useState(null);
-    const [password, setPassword] = React.useState(null);
+
     const paperStyle = {
         padding: 20,
         height: "70vh",
@@ -14,15 +14,11 @@ const Login = () => {
     };
     const avatarStyle = { backgroundColor: "#1bbd7e" };
     const loginFunction = () => {
-        alert("login Success");
+        alert("login Success"  );
     };
 
-    const changeName = (x) => {
-        setName(x);
-    };
-    const changePassword = (x) => {
-        setPassword(x);
-    };
+
+   
     return (
         <Grid>
             <Paper elevation={10} style={paperStyle}>
@@ -37,8 +33,7 @@ const Login = () => {
                     placeholder='Enter your Username'
                     fullWidth
                     required
-                    value={name}
-                    onChange={(x) => changeName(x)}
+                 
                 />
                 <TextField
                     label='Password'
@@ -46,11 +41,12 @@ const Login = () => {
                     fullWidth
                     required
                     type='password'
-                    onChange={(x) => changePassword(x)}
+         
+                   
                 />
 
                 <FormControlLabel
-                    control={<Checkbox name='CheckB' color='Primary' />}
+                    control={<Checkbox name='CheckB' color='primary' />}
                     label='Remember me'
                 />
                 <Button
@@ -62,7 +58,13 @@ const Login = () => {
                     Sign in
                 </Button>
                 <Grid />
-                <Button color='primary' variant='text' fullWidth>
+                <Button
+                    component={Link}
+                    to='/SignUp'
+                    fullWidth
+                    color='primary'
+                    variant='outlined'
+                    style={{ marginTop: 10 }}>
                     Sign up
                 </Button>
             </Paper>
