@@ -13,7 +13,7 @@ function SignUp() {
     return (
         <Grid>
             <Paper style={paperStyle} elevation={10}>
-                <Grid align='center'>
+                <Grid style={{alignItems:"center"}}>
                     <h3>Sign Up</h3>
                 </Grid>
                 
